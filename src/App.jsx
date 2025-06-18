@@ -107,7 +107,7 @@ const QuizPage = ({ questions, onRestart, onHome }) => {
     <div className="quiz-container" dir="rtl">
       <div className="question-counter">اَلسُّؤَالُ {current + 1} مِنْ {questions.length}</div>
       <div className="question-box">
-        <p className="question-text" dir="ltr" style={{textAlign:'left', fontWeight:'bold'}}>{q.question}</p>
+        <p className="question-text" dir="ltr" style={{fontWeight:'bold'}}>{q.question}</p>
       </div>
       <div className="options-grid">
         {q.options.map((option, idx) => {
