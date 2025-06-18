@@ -43,10 +43,9 @@ body {
 /* Mobile frame and color enhancements */
 .quiz-container {
   max-width: 420px;
-  width: 95vw;
-  min-height: 70vh;
+  width: calc(100vw - 1cm);
   min-width: 280px;
-  margin: 2.5vh auto;
+  margin: 0.5cm;
   background: linear-gradient(135deg, #f8fafc 60%, #e0e7ff 100%);
   border-radius: 2.2rem;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
@@ -63,11 +62,12 @@ body {
 
 @media (max-width: 600px) {
   .quiz-container {
-    width: 98vw;
+    width: calc(100vw - 1cm);
     min-width: unset;
     padding: 1.2rem 0.3rem 1.2rem 0.3rem;
     min-height: 85vh;
     border-radius: 1.2rem;
+    margin: 0.5cm;
   }
   h1, .quiz-title {
     font-size: 2em;
