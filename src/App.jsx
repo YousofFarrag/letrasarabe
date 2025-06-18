@@ -93,7 +93,7 @@ function App() {
           <>
             <p className="desc">اِخْتَبِرْ مَعْرِفَتَكَ بِالْحُرُوفِ اَلْعَرَبِيَّةِ</p>
             <div className="start-btns">
-              <button className="main-btn" onClick={() => startQuiz('random')}>اِمْتِحَانٌ عَشْوَائِيٌّ (١٠ أَسْئِلَةٍ)</button>
+              <button className="main-btn" onClick={() => startQuiz('random')}>اِمْتِحَانٌ </button>
               <button className="main-btn alt" onClick={() => startQuiz('first10')}>اِمْتِحَانُ أَوَّلِ ١٠ حُرُوفٍ</button>
               <button className="main-btn alt" onClick={() => startQuiz('second10')}>اِمْتِحَانُ ثَانِي ١٠ حُرُوفٍ</button>
               <button className="main-btn alt" onClick={() => startQuiz('last9')}>اِمْتِحَانُ آخِرِ ٩ حُرُوفٍ</button>
