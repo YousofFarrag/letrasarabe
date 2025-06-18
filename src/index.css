@@ -112,7 +112,7 @@ body {
 .options-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.7em;
+  gap: 0.4em;
   width: 100%;
   margin-bottom: 1.2em;
 }
@@ -121,11 +121,14 @@ body {
   color: #3730a3;
   border: 2px solid #a5b4fc;
   border-radius: 1em;
-  font-size: 1.2em;
+  font-size: 0.95em;
   font-weight: 600;
-  padding: 0.7em 0.2em;
+  padding: 0.4em 1.1em;
   transition: background 0.2s, border 0.2s, color 0.2s, box-shadow 0.2s;
   box-shadow: 0 1px 4px 0 rgba(99, 102, 241, 0.07);
+  min-width: 80px;
+  max-width: 180px;
+  box-sizing: border-box;
 }
 .option-btn.selected {
   background: #c7d2fe;
@@ -166,12 +169,15 @@ body {
   color: #fff;
   border: none;
   border-radius: 1em;
-  font-size: 1.1em;
+  font-size: 0.95em;
   font-weight: 700;
-  padding: 0.7em 2em;
+  padding: 0.4em 1.1em;
   margin-top: 1.2em;
   box-shadow: 0 2px 8px 0 rgba(99, 102, 241, 0.13);
   transition: background 0.2s, transform 0.1s;
+  min-width: 80px;
+  max-width: 180px;
+  box-sizing: border-box;
 }
 .action-btn:hover, .restart-btn:hover {
   background: linear-gradient(90deg, #3730a3 60%, #6366f1 100%);
@@ -221,6 +227,12 @@ body {
     font-size: 0.9em;
     padding: 0.3em 1.2em;
     margin-top: 2.2rem;
+  }
+  .action-btn, .restart-btn, .option-btn, .home-btn-inside {
+    font-size: 0.9em;
+    padding: 0.3em 0.7em;
+    min-width: 70px;
+    max-width: 140px;
   }
 }
 
