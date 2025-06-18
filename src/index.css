@@ -40,11 +40,9 @@ body {
   justify-content: center;
 }
 
-/* Mobile frame and color enhancements */
 .quiz-container {
-  max-width: 420px;
-  width: calc(100vw - 1cm);
-  min-width: 280px;
+  width: 370px;
+  height: 650px;
   margin: 0.5cm;
   background: linear-gradient(135deg, #f8fafc 60%, #e0e7ff 100%);
   border-radius: 2.2rem;
@@ -58,16 +56,23 @@ body {
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
+  min-width: 320px;
+  min-height: 500px;
+  max-width: 98vw;
+  max-height: 98vh;
 }
 
 @media (max-width: 600px) {
   .quiz-container {
-    width: calc(100vw - 1cm);
+    width: 98vw;
+    height: 98vw;
     min-width: unset;
+    min-height: unset;
     padding: 1.2rem 0.3rem 1.2rem 0.3rem;
-    min-height: 85vh;
     border-radius: 1.2rem;
     margin: 0.5cm;
+    max-width: 98vw;
+    max-height: 98vh;
   }
   h1, .quiz-title {
     font-size: 2em;
