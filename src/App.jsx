@@ -40,12 +40,12 @@ function getRandomQuestions(arr, n) {
 
 const StartPage = ({ onStart, onFirst10, onSecond10, onLast9 }) => (
   <div className="quiz-container" dir="rtl">
-    <h1 className="quiz-title">  الحروف العربية</h1>
-    <p className="quiz-desc">اختبر معرفتك بالحروف العربية. اختر نوع الامتحان:</p>
-    <button className="action-btn" onClick={onStart}>امتحان عشوائي (10 أسئلة)</button>
-    <button className="action-btn" style={{background:'#6366f1',marginTop:'1em'}} onClick={onFirst10}>امتحان أول 10 حروف</button>
-    <button className="action-btn" style={{background:'#6366f1',marginTop:'1em'}} onClick={onSecond10}>امتحان ثاني 10 حروف</button>
-    <button className="action-btn" style={{background:'#6366f1',marginTop:'1em'}} onClick={onLast9}>امتحان آخر 9 حروف</button>
+    <h1 className="quiz-title">اَلْحُرُوفُ اَلْعَرَبِيَّةُ</h1>
+    <p className="quiz-desc">اِخْتَبِرْ مَعْرِفَتَكَ بِالْحُرُوفِ اَلْعَرَبِيَّةِ. اِخْتَرْ نَوْعَ الاِمْتِحَانِ:</p>
+    <button className="action-btn" onClick={onStart}>اِمْتِحَانٌ عَشْوَائِيٌّ (١٠ أَسْئِلَةٍ)</button>
+    <button className="action-btn" style={{background:'#6366f1',marginTop:'1em'}} onClick={onFirst10}>اِمْتِحَانُ أَوَّلِ ١٠ حُرُوفٍ</button>
+    <button className="action-btn" style={{background:'#6366f1',marginTop:'1em'}} onClick={onSecond10}>اِمْتِحَانُ ثَانِي ١٠ حُرُوفٍ</button>
+    <button className="action-btn" style={{background:'#6366f1',marginTop:'1em'}} onClick={onLast9}>اِمْتِحَانُ آخِرِ ٩ حُرُوفٍ</button>
   </div>
 );
 
@@ -92,12 +92,12 @@ const QuizPage = ({ questions, onRestart, onHome }) => {
   if (showResult || current >= questions.length) {
     return (
       <div className="quiz-container" dir="rtl">
-        <h2 className="results-title">النتيجة النهائية</h2>
+        <h2 className="results-title">اَلنَّتِيجَةُ اَلنِّهَائِيَّةُ</h2>
         <div className="results-score">
-          لقد حصلت على <span style={{ color: '#22c55e', fontWeight: 800 }}>{score}</span> من أصل <span style={{ color: '#2563eb', fontWeight: 800 }}>{questions.length}</span> إجابات صحيحة!
+          لَقَدْ حَصَلْتَ عَلَى <span style={{ color: '#22c55e', fontWeight: 800 }}>{score}</span> مِنْ أَصْلِ <span style={{ color: '#2563eb', fontWeight: 800 }}>{questions.length}</span> إِجَابَاتٍ صَحِيحَةٍ!
         </div>
-        <button className="restart-btn" onClick={onRestart}>ابدأ الامتحان مرة أخرى</button>
-        <button className="home-btn-fixed" onClick={onHome}>الصفحة الرئيسية</button>
+        <button className="restart-btn" onClick={onRestart}>اِبْدَأِ الاِمْتِحَانَ مَرَّةً أُخْرَى</button>
+        <button className="home-btn-fixed" onClick={onHome}>اَلصَّفْحَةُ اَلرَّئِيسِيَّةُ</button>
       </div>
     );
   }
@@ -105,7 +105,7 @@ const QuizPage = ({ questions, onRestart, onHome }) => {
   const q = questions[current];
   return (
     <div className="quiz-container" dir="rtl">
-      <div className="question-counter">السؤال {current + 1} من {questions.length}</div>
+      <div className="question-counter">اَلسُّؤَالُ {current + 1} مِنْ {questions.length}</div>
       <div className="question-box">
         <p className="question-text" dir="ltr" style={{textAlign:'left', fontWeight:'bold'}}>{q.question}</p>
       </div>
@@ -136,30 +136,30 @@ const QuizPage = ({ questions, onRestart, onHome }) => {
       {checked && (
         selected === q.correctAnswer ? (
           <div className="feedback-box correct">
-            <span style={{display:'block', marginBottom:'1rem'}}>إجابة صحيحة! أحسنت!</span>
-            <button className="action-btn" style={{marginTop:'0'}} onClick={handleNext}>{current === questions.length - 1 ? "عرض النتيجة" : "السؤال التالي"}</button>
+            <span style={{display:'block', marginBottom:'1rem'}}>إِجَابَةٌ صَحِيحَةٌ! أَحْسَنْتَ!</span>
+            <button className="action-btn" style={{marginTop:'0'}} onClick={handleNext}>{current === questions.length - 1 ? "عَرْضُ اَلنَّتِيجَةِ" : "اَلسُّؤَالُ اَلتَّالِي"}</button>
           </div>
         ) : (
           <div className="feedback-box wrong">
-            <span style={{display:'block', marginBottom:'1rem'}}>إجابة خاطئة.</span>
+            <span style={{display:'block', marginBottom:'1rem'}}>إِجَابَةٌ خَاطِئَةٌ.</span>
             {!showCorrect ? (
               <>
-                <button className="action-btn" style={{background:'#ef4444',margin:'0.5rem'}} onClick={handleShowCorrect}>عرض الإجابة الصحيحة</button>
-                <button className="action-btn" style={{margin:'0.5rem'}} onClick={() => {setChecked(false); setSelected(null);}}>حاول مرة أخرى</button>
+                <button className="action-btn" style={{background:'#ef4444',margin:'0.5rem'}} onClick={handleShowCorrect}>عَرْضُ الإِجَابَةِ اَلصَّحِيحَةِ</button>
+                <button className="action-btn" style={{margin:'0.5rem'}} onClick={() => {setChecked(false); setSelected(null);}}>حَاوِلْ مَرَّةً أُخْرَى</button>
               </>
             ) : (
               <>
-                <span style={{display:'block',marginTop:'1rem', marginBottom:'1rem'}}>الإجابة الصحيحة هي: <span style={{ color: '#15803d', fontWeight:'bold' }}>{q.correctAnswer}</span></span>
-                <button className="action-btn" style={{marginTop:'0'}} onClick={handleNext}>{current === questions.length - 1 ? "عرض النتيجة" : "السؤال التالي"}</button>
+                <span style={{display:'block',marginTop:'1rem', marginBottom:'1rem'}}>الإِجَابَةُ اَلصَّحِيحَةُ هِيَ: <span style={{ color: '#15803d', fontWeight:'bold' }}>{q.correctAnswer}</span></span>
+                <button className="action-btn" style={{marginTop:'0'}} onClick={handleNext}>{current === questions.length - 1 ? "عَرْضُ اَلنَّتِيجَةِ" : "اَلسُّؤَالُ اَلتَّالِي"}</button>
               </>
             )}
           </div>
         )
       )}
       {!checked && (
-        <button className="action-btn" onClick={handleCheck} disabled={!selected}>تحقق من الإجابة</button>
+        <button className="action-btn" onClick={handleCheck} disabled={!selected}>تَحَقَّقْ مِنَ الإِجَابَةِ</button>
       )}
-      <button className="home-btn-inside" onClick={onHome}>الصفحة الرئيسية</button>
+      <button className="home-btn-inside" onClick={onHome}>اَلصَّفْحَةُ اَلرَّئِيسِيَّةُ</button>
     </div>
   );
 };
