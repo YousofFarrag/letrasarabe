@@ -371,12 +371,12 @@ body, #root, .main-bg {
   .q-text {
     font-size: 1.1em;
   }
-  .option-btn {
+ /* .option-btn {
     min-width: 2.2em;
     min-height: 2em;
     font-size: 1.1em;
     padding: 0.2em 0.7em;
-  }
+  }*/
   .feedback {
     font-size: 1em;
   }
