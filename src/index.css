@@ -29,7 +29,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(120deg, #fdf6e3 0%, #e0e7ff 100%);
+  background: #f8fafc;
   overflow-x: hidden;
 }
 
@@ -48,15 +48,15 @@ body {
   min-height: 500px;
   max-height: 98vh;
   margin: 0.5cm;
-  background: #fffbe9;
-  border-radius: 1.5rem;
-  box-shadow: 0 6px 32px 0 rgba(99, 102, 241, 0.10), 0 1.5px 6px 0 rgba(245, 158, 66, 0.08);
+  background: linear-gradient(135deg, #f8fafc 60%, #e0e7ff 100%);
+  border-radius: 2.2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  border: 3px solid #a5b4fc;
   padding: 1.2rem 1rem 1.2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  border: 1.5px solid #ffe4b5;
   position: relative;
   box-sizing: border-box;
   overflow-y: auto;
@@ -84,7 +84,8 @@ body {
 }
 
 .quiz-title {
-  color: #b45309;
+  color: #3730a3;
+  text-shadow: none;
   font-weight: 900;
   margin-bottom: 0.3em;
   text-align: center;
@@ -93,26 +94,26 @@ body {
   text-shadow: 0 1px 0 #fff3cd;
 }
 .quiz-desc {
-  color: #7c4700;
+  color: #334155;
   font-size: 1.15em;
   margin-bottom: 1.2em;
   text-align: center;
   font-weight: 500;
 }
 .question-counter {
-  color: #f59e42;
+  color: #6366f1;
   font-weight: 700;
   margin-bottom: 0.7em;
   font-size: 1.1em;
   text-align: center;
 }
 .question-box {
-  background: #fff3cd;
+  background: #e0e7ff;
   border-radius: 1.2em;
   padding: 1.1em 1em;
   margin-bottom: 1.2em;
   width: 100%;
-  box-shadow: 0 2px 8px 0 rgba(245, 158, 66, 0.10);
+  box-shadow: 0 2px 8px 0 rgba(99, 102, 241, 0.08);
   text-align: left;
 }
 .question-text {
@@ -122,24 +123,24 @@ body {
   direction: ltr;
 }
 .options-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.8em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6em;
   width: 100%;
   margin-bottom: 1.2em;
-  align-items: stretch;
-  justify-items: center;
 }
 .option-btn {
-  background: #fffbe9;
-  color: #b45309;
-  border: 2px solid #ffe4b5;
-  border-radius: 1.2em;
+  background: #f1f5f9;
+  color: #3730a3;
+  border: 2px solid #a5b4fc;
+  border-radius: 1.5em;
   font-size: 2em;
   font-weight: 800;
   padding: 0.3em 0.1em;
   transition: background 0.2s, border 0.2s, color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 1px 4px 0 rgba(245, 158, 66, 0.07);
+  box-shadow: 0 1px 4px 0 rgba(99, 102, 241, 0.07);
   width: 2.2em;
   min-width: 2.2em;
   max-width: 2.2em;
@@ -154,9 +155,9 @@ body {
   cursor: pointer;
 }
 .option-btn.selected {
-  background: #fde68a;
-  border-color: #f59e42;
-  box-shadow: 0 0 0 3px #ffe4b5;
+  background: #c7d2fe;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px #a5b4fc;
 }
 .option-btn.correct {
   background: #bbf7d0;
@@ -177,8 +178,8 @@ body {
   text-align: center;
   font-weight: 600;
   box-shadow: 0 2px 8px 0 rgba(239, 68, 68, 0.07);
-  background: #fffbe9;
-  color: #7c4700;
+  background: #f8fafc;
+  color: #0f172a;
 }
 .feedback-box.correct {
   background: #bbf7d0;
@@ -198,7 +199,7 @@ body {
   padding-right: 2em;
   white-space: nowrap;
   border-radius: 2em;
-  background: linear-gradient(90deg, #f59e42 60%, #fde68a 100%);
+  background: linear-gradient(90deg, #6366f1 60%, #a5b4fc 100%);
   color: #fff;
   border: none;
   font-weight: 700;
@@ -208,8 +209,7 @@ body {
   display: block;
 }
 .action-btn:hover, .restart-btn:hover {
-  background: linear-gradient(90deg, #b45309 60%, #f59e42 100%);
-  transform: scale(1.04);
+  background: linear-gradient(90deg, #3730a3 60%, #6366f1 100%);
 }
 .home-btn-inside {
   font-size: 1.15em;
@@ -232,11 +232,11 @@ body {
   display: block;
 }
 .home-btn-inside:hover {
-  background: #b45309;
-  transform: scale(1.04);
+  background: #ea580c;
 }
 .results-title {
-  color: #b45309;
+  color: #3730a3;
+  text-shadow: none;
   font-weight: 900;
   margin-bottom: 0.7em;
   text-align: center;
@@ -244,7 +244,7 @@ body {
   text-shadow: 0 1px 0 #fff3cd;
 }
 .results-score {
-  color: #7c4700;
+  color: #0f172a;
   font-size: 1.3em;
   margin-bottom: 1.5em;
   text-align: center;
