@@ -159,3 +159,11 @@ function App() {
 }
 
 export default App;
+.main-btn.home {
+  font-size: 1rem;
+  padding: 0.3em 1.2em;
+  min-width: 80px;
+  max-width: 120px;
+  height: 2.2em;
+  border-radius: 1.2em;
+}
