@@ -349,6 +349,20 @@ body, #root, .main-bg {
   /* Add any unique styles for results here */
 }
 
+.correct-answer-label {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #217a3a;
+  margin-bottom: 0.3em;
+}
+
+.correct-answer-value {
+  font-size: 2em;
+  font-weight: bold;
+  color: #217a3a;
+  margin-top: 0.2em;
+}
+
 @media (max-width: 600px) {
   .center-card {
     width: 99vw;

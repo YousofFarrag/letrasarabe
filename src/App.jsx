@@ -129,7 +129,10 @@ function App() {
                     {!showCorrect ? (
                       <button className="show-btn" style={{display: 'block', width: '90%', maxWidth: '350px', margin: '0.5em auto'}} onClick={handleShowCorrect}>عَرْضُ الإِجَابَةِ اَلصَّحِيحَةِ</button>
                     ) : (
-                      <span className="show-answer">الإِجَابَةُ اَلصَّحِيحَةُ هِيَ: <span className="right">{questions[current].correctAnswer}</span></span>
+                      <>
+                        <p className="correct-answer-label">الإِجَابَةُ اَلصَّحِيحَةُ هِيَ:</p>
+                        <span className="correct-answer-value">{questions[current].correctAnswer}</span>
+                      </>
                     )}
                   </div>
                 )
