@@ -2,35 +2,35 @@ import React, { useState } from 'react';
 import './index.css';
 
 const QUESTIONS = [
-  { question: "أيُّ هذهِ الحُرُوفِ هُوَ 'ألف'؟", options: ["ب", "ت", "أ", "ث"], correctAnswer: "أ" },
-  { question: "الحرف الذي يُشبه صوت 'ب' في الإسبانية هو ______.", options: ["ت", "ب", "ث", "ن"], correctAnswer: "ب" },
-  { question: "أيُّ حَرفٍ يُمثِّل صوت 'ت' الناعم؟", options: ["د", "ط", "ت", "ث"], correctAnswer: "ت" },
-  { question: "الحرف الذي يُشبه 'ث' في كلمة 'think' بالإنجليزية هو ______.", options: ["س", "ش", "ص", "ث"], correctAnswer: "ث" },
-  { question: "أيُّ هذهِ الحُرُوفِ يُشبه صوت 'ج' في الإنجليزية؟", options: ["ح", "خ", "ج", "ع"], correctAnswer: "ج" },
-  { question: "الحرف ذو الصوت الحلقي القوي هو ______.", options: ["ه", "ح", "خ", "غ"], correctAnswer: "ح" },
-  { question: "أيُّ حَرفٍ يُشبه صوت 'خ' في الإسبانية؟", options: ["ج", "ح", "خ", "ع"], correctAnswer: "خ" },
-  { question: "الحرف الذي يُشبه صوت 'د' الناعم هو ______.", options: ["ذ", "ض", "د", "ظ"], correctAnswer: "د" },
-  { question: "أيُّ حَرفٍ يُشبه 'ذ' في كلمة 'this' بالإنجليزية؟", options: ["د", "ز", "ذ", "ظ"], correctAnswer: "ذ" },
-  { question: "الحرف الذي يُشبه صوت 'ر' المُهتز هو ______.", options: ["ل", "ن", "ر", "ز"], correctAnswer: "ر" },
-  { question: "أيُّ حَرفٍ يُشبه صوت 'ز' في الإنجليزية؟", options: ["س", "ش", "ز", "ص"], correctAnswer: "ز" },
-  { question: "الحرف الذي يُشبه صوت 'س' الناعم هو ______.", options: ["ص", "س", "ش", "ظ"], correctAnswer: "س" },
-  { question: "أيُّ حَرفٍ يُشبه صوت 'ش' في الإنجليزية؟", options: ["س", "ش", "ص", "ث"], correctAnswer: "ش" },
-  { question: "الحرف ذو الصوت السِّين المُفَخَّم هو ______.", options: ["س", "ش", "ص", "ز"], correctAnswer: "ص" },
-  { question: "أيُّ حَرفٍ يُشبه صوت 'ض' المُفَخَّم؟", options: ["د", "ذ", "ض", "ظ"], correctAnswer: "ض" },
-  { question: "الحرف ذو الصوت 'ط' المُفَخَّم هو ______.", options: ["ت", "ث", "ط", "ظ"], correctAnswer: "ط" },
-  { question: "أيُّ حَرفٍ يُشبه 'ظ' المُفَخَّم؟", options: ["ذ", "ض", "ط", "ظ"], correctAnswer: "ظ" },
-  { question: "الحرف الحلقي الذي لا يوجد له مثيل في الإسبانية هو ______.", options: ["ح", "خ", "ع", "غ"], correctAnswer: "ع" },
-  { question: "أيُّ حَرفٍ يُشبه صوت 'غ' الفرنسي؟", options: ["ع", "ق", "غ", "خ"], correctAnswer: "غ" },
-  { question: "الحرف الذي يُشبه صوت 'ف' هو ______.", options: ["ب", "ف", "م", "ن"], correctAnswer: "ف" },
-  { question: "أيُّ حَرفٍ يُشبه صوت 'ق' العميق؟", options: ["ك", "ق", "غ", "خ"], correctAnswer: "ق" },
-  { question: "الحرف الذي يُشبه صوت 'ك' هو ______.", options: ["ق", "ك", "خ", "غ"], correctAnswer: "ك" },
-  { question: "الحرف الذي يُشبه صوت 'ل' هو ______.", options: ["ر", "م", "ل", "ن"], correctAnswer: "ل" },
-  { question: "أيُّ حَرفٍ يُشبه صوت 'م'؟", options: ["ب", "ف", "م", "و"], correctAnswer: "م" },
-  { question: "الحرف الذي يُشبه صوت 'ن' هو ______.", options: ["ل", "م", "ن", "ه"], correctAnswer: "ن" },
-  { question: "أيُّ حَرفٍ يُشبه صوت 'ه' الناعم؟", options: ["ح", "خ", "ه", "ع"], correctAnswer: "ه" },
-  { question: "الحرف الذي يُشبه صوت 'و' أو 'u' الطويلة هو ______.", options: ["ي", "و", "ا", "ه"], correctAnswer: "و" },
-  { question: "أيُّ حَرفٍ يُشبه صوت 'ي' أو 'i' الطويلة؟", options: ["ا", "و", "ي", "ه"], correctAnswer: "ي" },
-  { question: "الهمزة (ء) تُمثِّل صوت ______.", options: ["اتصال", "وقفة حلقية", "صمت", "همس"], correctAnswer: "وقفة حلقية" }
+  { question: "¿Cuál de estas letras tiene el sonido 'alif'?", options: ["ب", "ت", "أ", "ث"], correctAnswer: "أ" },
+  { question: "La letra que suena como la 'b' en español es ______.", options: ["ت", "ب", "ث", "ن"], correctAnswer: "ب" },
+  { question: "¿Qué letra representa el sonido 't' suave, como en 'tela'?", options: ["د", "ط", "ت", "ث"], correctAnswer: "ت" },
+  { question: "La letra árabe que se pronuncia como la 'th' sorda en inglés (como en 'think') es ______.", options: ["س", "ش", "ص", "ث"], correctAnswer: "ث" },
+  { question: "¿Cuál de estas letras tiene el sonido 'j' (como en 'joy')?", options: ["ح", "خ", "ج", "ع"], correctAnswer: "ج" },
+  { question: "La letra con un sonido 'h' gutural fuerte (como un suspiro desde la garganta) es ______.", options: ["ه", "ح", "خ", "غ"], correctAnswer: "ح" },
+  { question: "¿Qué letra suena como la 'j' fuerte española o la 'ch' en 'loch' escocés?", options: ["ج", "ح", "خ", "ع"], correctAnswer: "خ" },
+  { question: "El sonido 'd' suave (como en 'dedo') corresponde a la letra ______.", options: ["ذ", "ض", "د", "ظ"], correctAnswer: "د" },
+  { question: "La letra árabe que se pronuncia como la 'th' sonora en inglés (como en 'this') es ______.", options: ["د", "ز", "ذ", "ظ"], correctAnswer: "ذ" },
+  { question: "La letra árabe que tiene un sonido 'r' vibrante (como la 'r' en 'perro') es ______.", options: ["ل", "ن", "ر", "ز"], correctAnswer: "ر" },
+  { question: "¿Qué letra tiene el sonido 'z' en inglés (como en 'zebra')?", options: ["س", "ش", "ز", "ص"], correctAnswer: "ز" },
+  { question: "El sonido 's' suave (como en 'sol') es representado por ______.", options: ["ص", "س", "ش", "ظ"], correctAnswer: "س" },
+  { question: "¿Cuál de estas letras se pronuncia como 'sh', X in Galego (como en 'show')?", options: ["س", "ش", "ص", "ث"], correctAnswer: "ش" },
+  { question: "La letra con un sonido 's' enfático o 'grueso' es ______.", options: ["س", "ش", "ص", "ز"], correctAnswer: "ص" },
+  { question: "¿Qué letra árabe tiene un sonido 'd' enfático y profundo?", options: ["د", "ذ", "ض", "ظ"], correctAnswer: "ض" },
+  { question: "El sonido 't' enfático y 'grueso' es de la letra ______.", options: ["ت", "ث", "ط", "ظ"], correctAnswer: "ط" },
+  { question: "¿Cuál letra se pronuncia como una 'th' enfática (similar a la 'th' en 'this', pero con la lengua más atrás)?", options: ["ذ", "ض", "ط", "ظ"], correctAnswer: "ظ" },
+  { question: "La letra gutural que no tiene equivalente directo en español, producida en la parte posterior de la garganta, es ______.", options: ["ح", "خ", "ع", "غ"], correctAnswer: "ع" },
+  { question: "¿Qué letra árabe tiene un sonido gutural similar a la 'r' francesa?", options: ["ع", "ق", "غ", "خ"], correctAnswer: "غ" },
+  { question: "El sonido 'f' (como en 'foco') corresponde a la letra ______.", options: ["ب", "ف", "م", "ن"], correctAnswer: "ف" },
+  { question: "¿Cuál es la letra con un sonido 'q' gutural, más profundo que una 'k' normal?", options: ["ك", "ق", "غ", "خ"], correctAnswer: "ق" },
+  { question: "La letra que suena como una 'k' normal (como en 'casa') es ______.", options: ["ق", "ك", "خ", "غ"], correctAnswer: "ك" },
+  { question: "El sonido 'l' (como en 'lápiz') es de la letra ______.", options: ["ر", "م", "ل", "ن"], correctAnswer: "ل" },
+  { question: "¿Qué letra representa el sonido 'm' (como en 'mano')?", options: ["ب", "ف", "م", "و"], correctAnswer: "م" },
+  { question: "La letra árabe que suena como 'n' (como en 'nariz') es ______.", options: ["ل", "م", "ن", "ه"], correctAnswer: "ن" },
+  { question: "¿Cuál de estas letras tiene un sonido 'h' suave y aspirado (como en 'hola')?", options: ["ح", "خ", "ه", "ع"], correctAnswer: "ه" },
+  { question: "La letra que suena como 'w' (como en 'water') o una 'u' larga es ______.", options: ["ي", "و", "ا", "ه"], correctAnswer: "و" },
+  { question: "¿Qué letra representa el sonido 'y' (como en 'yate') o una 'i' larga?", options: ["ا", "و", "ي", "ه"], correctAnswer: "ي" },
+  { question: "La 'hamza' (ء) representa un sonido de ______.", options: ["unión", "pausa glotal", "silencio", "aspiración"], correctAnswer: "pausa glotal" }
 ];
 
 function getRandomQuestions(arr, n) {
@@ -102,9 +102,13 @@ function App() {
         )}
         {step === 'quiz' && (
           <div>
-            <div className="q-counter">اَلسُّؤَالُ {current + 1} مِنْ {questions.length}</div>
-            <div className="q-text" dir="ltr">{questions[current].question}</div>
-            <div className="options-2x2">
+            <div className="q-counter" style={{marginBottom: '1.2em', marginTop: '0.5em'}}>
+              اَلسُّؤَالُ {current + 1} مِنْ {questions.length}
+            </div>
+            <div className="q-text" dir="ltr" style={{marginBottom: '1.2em', marginTop: '0.5em'}}>
+              {questions[current].question}
+            </div>
+            <div className="options-2x2" style={{marginBottom: '1.5em', marginTop: '0.5em'}}>
               {questions[current].options.map((option, i) => {
                 let btnClass = 'option-btn';
                 if (selected === option) {
@@ -120,12 +124,12 @@ function App() {
             </div>
             {checked && (
               selected === questions[current].correctAnswer ? (
-                <div className="feedback correct">إِجَابَةٌ صَحِيحَةٌ! أَحْسَنْتَ!</div>
+                <div className="feedback correct" style={{marginTop: '1.2em', marginBottom: '1.2em'}}>إِجَابَةٌ صَحِيحَةٌ! أَحْسَنْتَ!</div>
               ) : (
-                <div className="feedback wrong">
+                <div className="feedback wrong" style={{marginTop: '1.2em', marginBottom: '1.2em'}}>
                   إِجَابَةٌ خَاطِئَةٌ.
                   {!showCorrect ? (
-                    <button className="show-btn" onClick={handleShowCorrect}>عَرْضُ الإِجَابَةِ اَلصَّحِيحَةِ</button>
+                    <button className="show-btn" style={{display: 'block', width: '90%', maxWidth: '350px', margin: '0.5em auto'}} onClick={handleShowCorrect}>عَرْضُ الإِجَابَةِ اَلصَّحِيحَةِ</button>
                   ) : (
                     <span className="show-answer">الإِجَابَةُ اَلصَّحِيحَةُ هِيَ: <span className="right">{questions[current].correctAnswer}</span></span>
                   )}
@@ -141,8 +145,8 @@ function App() {
         )}
         {step === 'result' && (
           <>
-            <div className="result-title">اَلنَّتِيجَةُ اَلنِّهَائِيَّةُ</div>
-            <div className="result-score">لَقَدْ حَصَلْتَ عَلَى <span className="right">{score}</span> مِنْ <span className="right">{questions.length}</span> إِجَابَاتٍ صَحِيحَةٍ!</div>
+            <div className="result-title" style={{marginBottom: '1.2em', marginTop: '0.5em'}}>اَلنَّتِيجَةُ اَلنِّهَائِيَّةُ</div>
+            <div className="result-score" style={{marginBottom: '1.2em', marginTop: '0.5em'}}>لَقَدْ حَصَلْتَ عَلَى <span className="right">{score}</span> مِنْ <span className="right">{questions.length}</span> إِجَابَاتٍ صَحِيحَةٍ!</div>
             <div className="quiz-actions">
               <button className="main-btn" onClick={handleRestart}>اِبْدَأِ الاِمْتِحَانَ مَرَّةً أُخْرَى</button>
               <button className="main-btn alt home" onClick={handleHome}>اَلصَّفْحَةُ اَلرَّئِيسِيَّةُ</button>

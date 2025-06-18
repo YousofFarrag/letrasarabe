@@ -26,6 +26,7 @@ body, #root, .main-bg {
   justify-content: center;
   position: relative;
   transition: box-shadow 0.2s;
+  gap: 1.2em;
 }
 
 .main-title {
@@ -47,9 +48,11 @@ body, #root, .main-bg {
 .start-btns {
   display: flex;
   flex-direction: column;
-  gap: 0.7em;
+  gap: 1em;
   width: 100%;
+  margin-top: 1.2em;
   margin-bottom: 0.5em;
+  align-items: center;
 }
 .main-btn {
   font-size: 1.18em;
@@ -63,9 +66,12 @@ body, #root, .main-bg {
   font-weight: 700;
   box-shadow: 0 2px 8px 0 rgba(99,102,241,0.13);
   transition: background 0.2s, transform 0.1s;
-  margin: 0 auto;
+  margin: 0.5em auto 0.5em auto;
   cursor: pointer;
   margin-bottom: 0.2em;
+  display: block;
+  width: 90%;
+  max-width: 350px;
 }
 .main-btn.alt {
   background: linear-gradient(90deg, #818cf8 60%, #c7d2fe 100%);
@@ -85,6 +91,10 @@ body, #root, .main-bg {
   margin-bottom: 0.7em;
   font-size: 1.1em;
   text-align: center;
+  margin-bottom: 1.2em;
+  margin-top: 0.5em;
+  width: 100%;
+  display: block;
 }
 .q-text {
   background: #e0e7ff;
@@ -106,7 +116,8 @@ body, #root, .main-bg {
   grid-template-columns: 1fr 1fr;
   gap: 0.7em 0.7em;
   width: 100%;
-  margin-bottom: 1.2em;
+  margin-bottom: 1.5em;
+  margin-top: 0.5em;
   justify-items: center;
 }
 .option-btn {
@@ -148,7 +159,8 @@ body, #root, .main-bg {
   width: 100%;
   border-radius: 1em;
   padding: 1em 0.7em;
-  margin-top: 1em;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
   font-size: 1.15em;
   text-align: center;
   font-weight: 600;
@@ -179,6 +191,10 @@ body, #root, .main-bg {
   font-weight: 700;
   cursor: pointer;
   transition: background 0.2s;
+  display: block;
+  width: 90%;
+  max-width: 350px;
+  margin: 0.5em auto 0.5em auto;
 }
 .show-btn:hover {
   background: #3730a3;
@@ -197,9 +213,10 @@ body, #root, .main-bg {
 .quiz-actions {
   display: flex;
   flex-direction: column;
-  gap: 0.7em;
+  gap: 1em;
   width: 100%;
   margin-top: 1.2em;
+  margin-bottom: 0.5em;
   align-items: center;
 }
 .result-title {
@@ -217,6 +234,9 @@ body, #root, .main-bg {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0.5em;
+  width: 100%;
+  display: block;
 }
 @media (max-width: 600px) {
   .center-card {
@@ -226,6 +246,7 @@ body, #root, .main-bg {
     padding: 1.2rem 0.3rem 1.2rem 0.3rem;
     border-radius: 1.2rem;
     margin: 0.5cm auto;
+    gap: 0.7em;
   }
   .main-title {
     font-size: 1.5em;
@@ -253,5 +274,13 @@ body, #root, .main-bg {
   }
   .result-score {
     font-size: 1.1em;
+  }
+  .main-btn, .main-btn.alt, .main-btn.home, .show-btn {
+    width: 98%;
+    max-width: 99vw;
+  }
+  .start-btns, .quiz-actions {
+    gap: 0.7em;
+    margin-top: 0.7em;
   }
 }
