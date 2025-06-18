@@ -129,8 +129,9 @@ body {
   padding: 0.4em 1.1em;
   transition: background 0.2s, border 0.2s, color 0.2s, box-shadow 0.2s;
   box-shadow: 0 1px 4px 0 rgba(99, 102, 241, 0.07);
-  min-width: 80px;
-  max-width: 180px;
+  min-width: 120px;
+  max-width: 100%;
+  white-space: nowrap;
   box-sizing: border-box;
 }
 .option-btn.selected {
@@ -178,8 +179,11 @@ body {
   margin-top: 1.2em;
   box-shadow: 0 2px 8px 0 rgba(99, 102, 241, 0.13);
   transition: background 0.2s, transform 0.1s;
-  min-width: 80px;
-  max-width: 180px;
+  min-width: 180px;
+  max-width: 100%;
+  padding-left: 2em;
+  padding-right: 2em;
+  white-space: nowrap;
   box-sizing: border-box;
 }
 .action-btn:hover, .restart-btn:hover {
@@ -211,16 +215,16 @@ body {
   color: #fff;
   border: none;
   border-radius: 2em;
-  font-size: 1.25em;
+  font-size: 1.15em;
   font-weight: 700;
-  padding: 0.4em 2em;
+  padding: 0.4em 0.8em;
   box-shadow: 0 2px 8px 0 rgba(245, 158, 66, 0.13);
   transition: background 0.2s, transform 0.1s;
   opacity: 0.98;
   text-align: center;
   width: fit-content;
-  min-width: 120px;
-  max-width: 220px;
+  min-width: 80px;
+  max-width: 160px;
 }
 .home-btn-inside:hover {
   background: #ea580c;
@@ -229,14 +233,20 @@ body {
 @media (max-width: 600px) {
   .home-btn-inside {
     font-size: 1em;
-    padding: 0.3em 1.2em;
-    margin-top: 2.2rem;
+    min-width: 60px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
   }
   .action-btn, .restart-btn, .home-btn-inside {
-    font-size: 1.1em;
-    padding: 0.3em 0.7em;
-    min-width: 70px;
-    max-width: 140px;
+    font-size: 1.25em;
+    min-width: 180px;
+    max-width: 100%;
+    padding-left: 2em;
+    padding-right: 2em;
+    white-space: nowrap;
+  }
+  .options-grid .option-btn {
+    min-width: 90px;
   }
 }
 
