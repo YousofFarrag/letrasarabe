@@ -39,13 +39,13 @@ function getRandomQuestions(arr, n) {
 }
 
 const StartPage = ({ onStart, onFirst10, onSecond10, onLast9 }) => (
-  <div className="quiz-container" dir="rtl">
-    <h1 className="quiz-title">اَلْحُرُوفُ اَلْعَرَبِيَّةُ</h1>
-    <p className="quiz-desc">اِخْتَبِرْ مَعْرِفَتَكَ بِالْحُرُوفِ اَلْعَرَبِيَّةِ. اِخْتَرْ نَوْعَ الاِمْتِحَانِ:</p>
-    <button className="action-btn" onClick={onStart}>اِمْتِحَانٌ عَشْوَائِيٌّ (١٠ أَسْئِلَةٍ)</button>
-    <button className="action-btn" style={{background:'#6366f1',marginTop:'1em'}} onClick={onFirst10}>اِمْتِحَانُ أَوَّلِ ١٠ حُرُوفٍ</button>
-    <button className="action-btn" style={{background:'#6366f1',marginTop:'1em'}} onClick={onSecond10}>اِمْتِحَانُ ثَانِي ١٠ حُرُوفٍ</button>
-    <button className="action-btn" style={{background:'#6366f1',marginTop:'1em'}} onClick={onLast9}>اِمْتِحَانُ آخِرِ ٩ حُرُوفٍ</button>
+  <div className="quiz-container" dir="rtl" style={{alignItems: 'center', justifyContent: 'center'}}>
+    <h1 className="quiz-title" style={{textAlign: 'center', width: '100%'}}>اَلْحُرُوفُ اَلْعَرَبِيَّةُ</h1>
+    <p className="quiz-desc" style={{textAlign: 'center', width: '100%'}}>اِخْتَبِرْ مَعْرِفَتَكَ بِالْحُرُوفِ اَلْعَرَبِيَّةِ. اِخْتَرْ نَوْعَ الاِمْتِحَانِ:</p>
+    <button className="action-btn" style={{display: 'block', margin: '0.5em auto'}} onClick={onStart}>اِمْتِحَانٌ عَشْوَائِيٌّ (١٠ أَسْئِلَةٍ)</button>
+    <button className="action-btn" style={{background:'#6366f1',margin:'1em auto 0 auto', display: 'block'}} onClick={onFirst10}>اِمْتِحَانُ أَوَّلِ ١٠ حُرُوفٍ</button>
+    <button className="action-btn" style={{background:'#6366f1',margin:'1em auto 0 auto', display: 'block'}} onClick={onSecond10}>اِمْتِحَانُ ثَانِي ١٠ حُرُوفٍ</button>
+    <button className="action-btn" style={{background:'#6366f1',margin:'1em auto 0 auto', display: 'block'}} onClick={onLast9}>اِمْتِحَانُ آخِرِ ٩ حُرُوفٍ</button>
   </div>
 );
 
@@ -104,10 +104,10 @@ const QuizPage = ({ questions, onRestart, onHome }) => {
 
   const q = questions[current];
   return (
-    <div className="quiz-container" dir="rtl">
-      <div className="question-counter">اَلسُّؤَالُ {current + 1} مِنْ {questions.length}</div>
+    <div className="quiz-container" dir="rtl" style={{alignItems: 'center', justifyContent: 'center'}}>
+      <div className="question-counter" style={{textAlign: 'center', width: '100%'}}>اَلسُّؤَالُ {current + 1} مِنْ {questions.length}</div>
       <div className="question-box">
-        <p className="question-text" dir="ltr" style={{fontWeight:'bold'}}>{q.question}</p>
+        <p className="question-text" dir="ltr" style={{fontWeight:'bold', textAlign:'center', width:'100%', margin:0}}>{q.question}</p>
       </div>
       <div className="options-grid">
         {q.options.map((option, idx) => {
@@ -127,6 +127,7 @@ const QuizPage = ({ questions, onRestart, onHome }) => {
               onClick={() => handleSelect(option)}
               className={btnClass}
               disabled={checked}
+              style={{margin: '0 auto', display: 'block'}}
             >
               {option}
             </button>
