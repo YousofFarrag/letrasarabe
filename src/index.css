@@ -350,14 +350,15 @@ body, #root, .main-bg {
 }
 
 .correct-answer-label {
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: bold;
-  color: #217a3a;
+  color: #991b1b;
   margin-bottom: 0.3em;
+  direction: rtl;
 }
 
 .correct-answer-value {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
   color: #217a3a;
   margin-top: 0.2em;

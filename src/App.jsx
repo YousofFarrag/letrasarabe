@@ -122,15 +122,15 @@ function App() {
               </div>
               {checked && (
                 selected === questions[current].correctAnswer ? (
-                  <div className="feedback correct" style={{marginTop: '1.2em', marginBottom: '1.2em'}}>إِجَابَةٌ صَحِيحَةٌ! أَحْسَنْتَ!</div>
+                  <div className="feedback correct" style={{marginTop: '1.2em', marginBottom: '1.2em', direction: 'rtl'}}>إِجَابَةٌ صَحِيحَةٌ! أَحْسَنْتَ!</div>
                 ) : (
-                  <div className="feedback wrong" style={{marginTop: '1.2em', marginBottom: '1.2em'}}>
+                  <div className="feedback wrong" style={{marginTop: '1.2em', marginBottom: '1.2em', direction: 'rtl'}}>
                     إِجَابَةٌ خَاطِئَةٌ.
                     {!showCorrect ? (
                       <button className="show-btn" style={{display: 'block', width: '90%', maxWidth: '350px', margin: '0.5em auto'}} onClick={handleShowCorrect}>عَرْضُ الإِجَابَةِ اَلصَّحِيحَةِ</button>
                     ) : (
                       <>
-                        <p className="correct-answer-label">الإِجَابَةُ اَلصَّحِيحَةُ هِيَ:</p>
+                        <p className="correct-answer-label" dir="rtl">الإِجَابَةُ اَلصَّحِيحَةُ هِيَ:</p>
                         <span className="correct-answer-value">{questions[current].correctAnswer}</span>
                       </>
                     )}
