@@ -104,12 +104,12 @@ const QuizPage = ({ questions, onRestart, onHome }) => {
 
   const q = questions[current];
   return (
-    <div className="quiz-container" dir="rtl" style={{alignItems: 'center', justifyContent: 'center'}}>
+    <div className="quiz-container" dir="rtl" style={{alignItems: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'column'}}>
       <div className="question-counter" style={{textAlign: 'center', width: '100%'}}>اَلسُّؤَالُ {current + 1} مِنْ {questions.length}</div>
-      <div className="question-box">
+      <div className="question-box" style={{margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
         <p className="question-text" dir="ltr" style={{fontWeight:'bold', textAlign:'center', width:'100%', margin:0}}>{q.question}</p>
       </div>
-      <div className="options-grid">
+      <div className="options-grid" style={{justifyContent: 'center', width: '100%'}}>
         {q.options.map((option, idx) => {
           let btnClass = 'option-btn';
           if (selected === option) {
