@@ -109,19 +109,16 @@ function App() {
               <div className="q-text" dir="ltr" style={{marginBottom: '1.2em', marginTop: '0.5em'}}>
                 {questions[current].question}
               </div>
-              <div className="options-2x2" style={{marginBottom: '1.5em', marginTop: '0.5em'}}>
-                {questions[current].options.map((option, i) => {
-                  let btnClass = 'option-btn';
-                  if (selected === option) {
-                    if (checked) btnClass += option === questions[current].correctAnswer ? ' correct' : ' wrong';
-                    else btnClass += ' selected';
-                  } else if (checked && showCorrect && option === questions[current].correctAnswer) {
-                    btnClass += ' correct';
-                  }
-                  return (
-                    <button key={i} className={btnClass} onClick={() => handleSelect(option)} disabled={checked}>{option}</button>
-                  );
-                })}
+              <div className="options-row">
+                {questions[current].options.map((option, idx) => (
+                  <button
+                    key={idx}
+                    className={`option-btn${selected === option ? ' selected' : ''}`}
+                    onClick={() => handleSelect(option)}
+                  >
+                    {option}
+                  </button>
+                ))}
               </div>
               {checked && (
                 selected === questions[current].correctAnswer ? (
