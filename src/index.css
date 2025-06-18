@@ -58,6 +58,8 @@ button:focus-visible {
 .quiz-container {
   max-width: 420px;
   width: 95vw;
+  min-height: 70vh;
+  min-width: 280px;
   margin: 2.5vh auto;
   background: linear-gradient(135deg, #f8fafc 60%, #e0e7ff 100%);
   border-radius: 2.2rem;
@@ -67,11 +69,16 @@ button:focus-visible {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  border: 3px solid #a5b4fc;
   position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 @media (max-width: 600px) {
   .quiz-container {
+    width: 98vw;
+    min-width: unset;
     padding: 1.2rem 0.3rem 1.2rem 0.3rem;
     min-height: 85vh;
     border-radius: 1.2rem;
