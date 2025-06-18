@@ -10,6 +10,24 @@ body, #root, .main-bg {
   justify-content: center;
 }
 
+/* App frame/container */
+.app-frame {
+  max-width: 420px;
+  width: 100vw;
+  min-height: 90vh;
+  margin: 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 1.5em;
+  box-shadow: 0 4px 24px 0 rgba(99, 102, 241, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  position: relative;
+}
+
 .center-card {
   background: rgba(255,255,255,0.95);
   border-radius: 2.2rem;
@@ -81,6 +99,12 @@ body, #root, .main-bg {
   background: #f59e42;
   color: #fff;
   margin-top: 1.2em;
+  font-size: 1rem;
+  padding: 0.3em 1.2em;
+  min-width: 80px;
+  max-width: 120px;
+  height: 2.2em;
+  border-radius: 1.2em;
 }
 .main-btn:active {
   transform: scale(0.97);
@@ -101,7 +125,7 @@ body, #root, .main-bg {
   border-radius: 1.2em;
   padding: 1.1em 1em;
   margin-bottom: 1.2em;
-  width: 100%;
+  width: 80%;
   box-shadow: 0 2px 8px 0 rgba(99, 102, 241, 0.08);
   color: #0f172a;
   font-size: 1.3em;
@@ -125,13 +149,13 @@ body, #root, .main-bg {
   color: #3730a3;
   border: 2px solid #a5b4fc;
   border-radius: 1.5em;
-  font-size: 1.3em;
+  font-size: 26px;
   font-weight: 800;
   padding: 0.3em 1.2em;
   transition: background 0.2s, border 0.2s, color 0.2s, box-shadow 0.2s;
   box-shadow: 0 1px 4px 0 rgba(99, 102, 241, 0.07);
-  min-width: 3.2em;
-  min-height: 2.5em;
+  min-width: 2.5em;
+  min-height: 2em;
   text-align: center;
   white-space: nowrap;
   margin: 0 auto;
@@ -238,6 +262,83 @@ body, #root, .main-bg {
   width: 100%;
   display: block;
 }
+
+/* Question card and feedback/answer boxes 
+.question-box,
+.feedback,
+.result-box {
+  background: #f5f7ff;
+  border-radius: 1.2em;
+  padding: 1.2em 0.5em;
+  margin: 1.2em 0;
+  box-shadow: 0 2px 8px 0 rgba(99, 102, 241, 0.08);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1.3em;
+  font-family: 'Cairo', Arial, sans-serif;
+  overflow-wrap: break-word;
+  word-break: break-word; 
+  /* Add this to match the answer cards */
+  align-self: stretch;
+}
+
+/* Question card only */
+.question-box {
+  background: #e3f0ff;
+  border-radius: 1.5em;
+  padding: 1.5em 1em;
+  margin: 1.5em 0;
+  box-shadow: 0 4px 16px 0 rgba(99, 102, 241, 0.10);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: 'Cairo', Arial, sans-serif;
+  color: #232946;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Feedback box only */
+.feedback {
+  background: #fffbe7;
+  border-radius: 1.2em;
+  padding: 1.2em 0.5em;
+  margin: 1.2em 0;
+  box-shadow: 0 2px 8px 0 rgba(255, 193, 7, 0.08);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1.2em;
+  font-family: 'Cairo', Arial, sans-serif;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  /* Add any unique styles for feedback here */
+}
+
+/* Result box only */
+.result-box {
+  background: #e0ffe7;
+  border-radius: 1.2em;
+  padding: 1.2em 0.5em;
+  margin: 1.2em 0;
+  box-shadow: 0 2px 8px 0 rgba(76, 175, 80, 0.08);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1.2em;
+  font-family: 'Cairo', Arial, sans-serif;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  /* Add any unique styles for results here */
+}
+
 @media (max-width: 600px) {
   .center-card {
     width: 99vw;

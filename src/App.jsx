@@ -105,41 +105,43 @@ function App() {
             <div className="q-counter" style={{marginBottom: '1.2em', marginTop: '0.5em'}}>
               اَلسُّؤَالُ {current + 1} مِنْ {questions.length}
             </div>
-            <div className="q-text" dir="ltr" style={{marginBottom: '1.2em', marginTop: '0.5em'}}>
-              {questions[current].question}
-            </div>
-            <div className="options-2x2" style={{marginBottom: '1.5em', marginTop: '0.5em'}}>
-              {questions[current].options.map((option, i) => {
-                let btnClass = 'option-btn';
-                if (selected === option) {
-                  if (checked) btnClass += option === questions[current].correctAnswer ? ' correct' : ' wrong';
-                  else btnClass += ' selected';
-                } else if (checked && showCorrect && option === questions[current].correctAnswer) {
-                  btnClass += ' correct';
-                }
-                return (
-                  <button key={i} className={btnClass} onClick={() => handleSelect(option)} disabled={checked}>{option}</button>
-                );
-              })}
-            </div>
-            {checked && (
-              selected === questions[current].correctAnswer ? (
-                <div className="feedback correct" style={{marginTop: '1.2em', marginBottom: '1.2em'}}>إِجَابَةٌ صَحِيحَةٌ! أَحْسَنْتَ!</div>
-              ) : (
-                <div className="feedback wrong" style={{marginTop: '1.2em', marginBottom: '1.2em'}}>
-                  إِجَابَةٌ خَاطِئَةٌ.
-                  {!showCorrect ? (
-                    <button className="show-btn" style={{display: 'block', width: '90%', maxWidth: '350px', margin: '0.5em auto'}} onClick={handleShowCorrect}>عَرْضُ الإِجَابَةِ اَلصَّحِيحَةِ</button>
-                  ) : (
-                    <span className="show-answer">الإِجَابَةُ اَلصَّحِيحَةُ هِيَ: <span className="right">{questions[current].correctAnswer}</span></span>
-                  )}
-                </div>
-              )
-            )}
-            <div className="quiz-actions">
-              {!checked && <button className="main-btn" onClick={handleCheck} disabled={!selected}>تَحَقَّقْ مِنَ الإِجَابَةِ</button>}
-              {checked && <button className="main-btn" onClick={handleNext}>{current === questions.length - 1 ? "عَرْضُ اَلنَّتِيجَةِ" : "اَلسُّؤَالُ اَلتَّالِي"}</button>}
-              <button className="main-btn alt home" onClick={handleHome}>اَلصَّفْحَةُ اَلرَّئِيسِيَّةُ</button>
+            <div className="question-box">
+              <div className="q-text" dir="ltr" style={{marginBottom: '1.2em', marginTop: '0.5em'}}>
+                {questions[current].question}
+              </div>
+              <div className="options-2x2" style={{marginBottom: '1.5em', marginTop: '0.5em'}}>
+                {questions[current].options.map((option, i) => {
+                  let btnClass = 'option-btn';
+                  if (selected === option) {
+                    if (checked) btnClass += option === questions[current].correctAnswer ? ' correct' : ' wrong';
+                    else btnClass += ' selected';
+                  } else if (checked && showCorrect && option === questions[current].correctAnswer) {
+                    btnClass += ' correct';
+                  }
+                  return (
+                    <button key={i} className={btnClass} onClick={() => handleSelect(option)} disabled={checked}>{option}</button>
+                  );
+                })}
+              </div>
+              {checked && (
+                selected === questions[current].correctAnswer ? (
+                  <div className="feedback correct" style={{marginTop: '1.2em', marginBottom: '1.2em'}}>إِجَابَةٌ صَحِيحَةٌ! أَحْسَنْتَ!</div>
+                ) : (
+                  <div className="feedback wrong" style={{marginTop: '1.2em', marginBottom: '1.2em'}}>
+                    إِجَابَةٌ خَاطِئَةٌ.
+                    {!showCorrect ? (
+                      <button className="show-btn" style={{display: 'block', width: '90%', maxWidth: '350px', margin: '0.5em auto'}} onClick={handleShowCorrect}>عَرْضُ الإِجَابَةِ اَلصَّحِيحَةِ</button>
+                    ) : (
+                      <span className="show-answer">الإِجَابَةُ اَلصَّحِيحَةُ هِيَ: <span className="right">{questions[current].correctAnswer}</span></span>
+                    )}
+                  </div>
+                )
+              )}
+              <div className="quiz-actions">
+                {!checked && <button className="main-btn" onClick={handleCheck} disabled={!selected}>تَحَقَّقْ مِنَ الإِجَابَةِ</button>}
+                {checked && <button className="main-btn" onClick={handleNext}>{current === questions.length - 1 ? "عَرْضُ اَلنَّتِيجَةِ" : "اَلسُّؤَالُ اَلتَّالِي"}</button>}
+                <button className="main-btn alt home" onClick={handleHome}>اَلصَّفْحَةُ اَلرَّئِيسِيَّةُ</button>
+              </div>
             </div>
           </div>
         )}
@@ -159,11 +161,3 @@ function App() {
 }
 
 export default App;
-.main-btn.home {
-  font-size: 1rem;
-  padding: 0.3em 1.2em;
-  min-width: 80px;
-  max-width: 120px;
-  height: 2.2em;
-  border-radius: 1.2em;
-}
