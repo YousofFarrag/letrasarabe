@@ -121,12 +121,13 @@ body {
   direction: ltr;
 }
 .options-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 0.7em;
   width: 100%;
   margin-bottom: 1.2em;
   align-items: stretch;
+  justify-items: center;
 }
 .option-btn {
   background: #f1f5f9;
@@ -149,6 +150,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+.option-btn.selected {
+  background: #c7d2fe;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px #a5b4fc;
 }
 @media (max-width: 600px) {
   .option-btn {
