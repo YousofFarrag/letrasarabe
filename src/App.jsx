@@ -14,7 +14,7 @@ const QUESTIONS = [
   { question: "La letra árabe que tiene un sonido 'r' vibrante (como la 'r' en 'perro') es ______.", options: ["ل", "ن", "ر", "ز"], correctAnswer: "ر" },
   { question: "¿Qué letra tiene el sonido 'z' en inglés (como en 'zebra')?", options: ["س", "ش", "ز", "ص"], correctAnswer: "ز" },
   { question: "El sonido 's' suave (como en 'sol') es representado por ______.", options: ["ص", "س", "ش", "ظ"], correctAnswer: "س" },
-  { question: "¿Cuál de estas letras se pronuncia como 'sh', X en Galego (como en 'show')?", options: ["س", "ش", "ص", "ث"], correctAnswer: "ش" },
+  { question: "¿Cuál de estas letras se pronuncia como 'sh', X in Galego (como en 'show')?", options: ["س", "ش", "ص", "ث"], correctAnswer: "ش" },
   { question: "La letra con un sonido 's' enfático o 'grueso' es ______.", options: ["س", "ش", "ص", "ز"], correctAnswer: "ص" },
   { question: "¿Qué letra árabe tiene un sonido 'd' enfático y profundo?", options: ["د", "ذ", "ض", "ظ"], correctAnswer: "ض" },
   { question: "El sonido 't' enfático y 'grueso' es de la letra ______.", options: ["ت", "ث", "ط", "ظ"], correctAnswer: "ط" },
@@ -201,9 +201,3 @@ const App = () => {
 };
 
 export default App;
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
-export default defineConfig({
-  plugins: [react()],
-})
