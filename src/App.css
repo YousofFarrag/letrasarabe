@@ -40,3 +40,9 @@
 .read-the-docs {
   color: #888;
 }
+
+.quiz-rtl {
+  direction: rtl;
+  text-align: right;
+  font-family: Tahoma, Arial, "Noto Naskh Arabic", sans-serif;
+}
