@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/arabepresente2025/', // <-- This must match your repo name!
+   // <-- This must match your repo name!
   plugins: [react()],
+  base: '/arabepresente2025/',
 });
