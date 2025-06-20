@@ -1538,12 +1538,6 @@ function App() {
   const [score, setScore] = useState(0);
   const [showCorrect, setShowCorrect] = useState(false);
 
-  // Example state setup (adjust if your state is different)
-  const [showFeedback, setShowFeedback] = useState(false);
-  const [isCorrect, setIsCorrect] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-
   // Start quiz handlers
   const startQuiz = (type) => {
     let selectedQuestions = [];
@@ -1672,21 +1666,6 @@ function App() {
                     )}
                   </div>
                 )
-              )}
-              {showFeedback && (
-                <div>
-                  {isCorrect ? (
-                    <div>
-                      <span>¡Correcto!</span>
-                      <div>{questions[currentQuestion].trad}</div>
-                    </div>
-                  ) : (
-                    <div>
-                      <span>Incorrecto. La respuesta correcta es: {questions[currentQuestion].correctAnswer}</span>
-                      <div>{questions[currentQuestion].trad}</div>
-                    </div>
-                  )}
-                </div>
               )}
               <div className="quiz-actions">
                 {!checked && <button className="main-btn" onClick={handleCheck} disabled={!selected}>تَحَقَّقْ مِنَ الإِجَابَةِ</button>}
