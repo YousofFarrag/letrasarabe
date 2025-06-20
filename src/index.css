@@ -291,6 +291,9 @@ body, #root, .main-bg {
   overflow-wrap: break-word;
   word-break: break-word; 
   /* Add this to match the answer cards */
+
+/* Add this to match the answer cards */
+.answer-card {
   align-self: stretch;
 }
 
