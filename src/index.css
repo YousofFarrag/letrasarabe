@@ -211,7 +211,7 @@ body, #root, .main-bg {
   transition: background 0.2s, border 0.2s, color 0.2s;
   text-align: center;
   outline: none;
-  min-width: 100px;
+  min-width: 130px;
   min-height: 2em;
   user-select: none;
 }
