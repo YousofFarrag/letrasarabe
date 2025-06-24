@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
-
+function toIndianNumber(n) {
+  return n.toLocaleString("ar-EG");
+}
 const QUESTIONS = [
   // -------------------- فَعَلَ (hacer) --------------------
   {
@@ -1775,6 +1777,8 @@ function App() {
   const [showFeedback, setShowFeedback] = useState(false);
   const [score, setScore] = useState(0);
   const [showCorrect, setShowCorrect] = useState(false);
+  const [showConfirmExit, setShowConfirmExit] = useState(false);
+    const [userAnswers, setUserAnswers] = useState([]);
 
   useEffect(() => {
     if (questions.length > 0 && questions[currentQuestion]) {
@@ -1813,6 +1817,7 @@ const startQuiz = (type) => {
   setQuestions(selectedQuestions);
   setCurrentQuestion(0);
   setScore(0);
+  setUserAnswers([]);
   setStep("quiz");
   setSelectedOption(null);
   setShowFeedback(false);
@@ -1825,6 +1830,10 @@ const startQuiz = (type) => {
     setShowFeedback(true);
     setShowCorrect(false);
     if (correct) setScore((prev) => prev + 1);
+      // Store user's answer
+    const newAnswers = [...userAnswers];
+    newAnswers[currentQuestion] = option;
+    setUserAnswers(newAnswers);
   };
 
   const handleNext = () => {
@@ -1838,66 +1847,69 @@ const startQuiz = (type) => {
     setStep("start");
     setQuestions([]);
     setCurrentQuestion(0);
+    setUserAnswers([]);
     setScore(0);
     setSelectedOption(null);
     setShowFeedback(false);
   };
 
   return (
-    <div className="app-frame" dir="rtl">
+    <div className="app-frame" dir="rtl" style={{ position: "relative", minHeight: "90vh", display: "flex", flexDirection: "column" }}>
       {step === "start" && (
         <>
           <div className="main-title">اَلْفِعْلُ الْمُضَارِعُ</div>
           <div className="desc">اِخْتَبِرْ مَعْرِفَتَكَ بِتَصْرِيفِ اَلْفِعْلِ الْمُضَارِعِ</div>
           <div className="start-btns">
             <button className="main-btn" onClick={() => startQuiz("random")}>امْتَحَانٌ عَشْوَائِيّ</button>
-            <button className="main-btn alt" onClick={() => startQuiz("verbs1-10")}>الأَفْعَالُ 1-10</button>
-            <button className="main-btn alt" onClick={() => startQuiz("verbs11-20")}>الأَفْعَالُ 11-20</button>
-            <button className="main-btn alt" onClick={() => startQuiz("verbs21-30")}>الأَفْعَالُ 21-30</button>
-            <button className="main-btn alt" onClick={() => startQuiz("verbs31-40")}>الأَفْعَالُ 31-40</button>
-            <button className="main-btn alt" onClick={() => startQuiz("verbs41-50")}>الأَفْعَالُ 41-50</button>
-            <button className="main-btn alt" onClick={() => startQuiz("verbs51-60")}>الأَفْعَالُ 51-60</button>
-            <button className="main-btn alt" onClick={() => startQuiz("verbs61-70")}>الأَفْعَالُ 61-70</button>
-            <button className="main-btn alt" onClick={() => startQuiz("verbs71-76")}>الأَفْعَالُ 71-76</button>
-          </div>
+            <button className="main-btn alt" onClick={() => startQuiz("verbs1-10")}>الأَفْعَالُ ١-١٠</button>
+            <button className="main-btn alt" onClick={() => startQuiz("verbs11-20")}>الأَفْعَالُ ١١-٢٠</button>
+            <button className="main-btn alt" onClick={() => startQuiz("verbs21-30")}>الأَفْعَالُ ٢١-٣٠</button>
+            <button className="main-btn alt" onClick={() => startQuiz("verbs31-40")}>الأَفْعَالُ ٣١-٤٠</button>
+            <button className="main-btn alt" onClick={() => startQuiz("verbs41-50")}>الأَفْعَالُ ٤١-٥٠</button>
+            <button className="main-btn alt" onClick={() => startQuiz("verbs51-60")}>الأَفْعَالُ ٥١-٦٠</button>
+            <button className="main-btn alt" onClick={() => startQuiz("verbs61-70")}>الأَفْعَالُ ٦١-٧٠</button>
+            <button className="main-btn alt" onClick={() => startQuiz("verbs71-76")}>الأَفْعَالُ ٧١-٧٦</button>          </div>
         </>
       )}
 
       {step === "quiz" && questions.length > 0 && (
         <>
           <div className="q-counter">
-            {`السُّؤَالُ ${currentQuestion + 1} مِن ${questions.length}`}
+            {`السُّؤَالُ ${toIndianNumber(currentQuestion + 1)} مِن ${toIndianNumber(questions.length)}`}
           </div>
           <div className="q-text">{questions[currentQuestion].question}</div>
           <div className="verb">
             {questions[currentQuestion].verb}
           </div>
           <div className="options-2x2">
-            {shuffledOptions.map((option, idx) => (
-              <button
-                key={idx}
-                className={
-                  "option-btn" +
-                  (selectedOption
-                    ? option === questions[currentQuestion].correctAnswer
-                      ? " correct"
-                      : selectedOption === option
-                        ? " wrong"
-                        : ""
-                    : "")
+            {shuffledOptions.map((option, idx) => {
+              let btnClass = "option-btn";
+              if (selectedOption) {
+                if (option === questions[currentQuestion].correctAnswer) {
+                  if (isCorrect || showCorrect) {
+                    btnClass += " correct";
+                  }
+                } else if (option === selectedOption) {
+                  btnClass += " wrong";
                 }
-                onClick={() => !showFeedback && handleAnswer(option)}
-                disabled={!!selectedOption}
-              >
-                {option}
-              </button>
-            ))}
+              }
+              return (
+                <button
+                  key={idx}
+                  className={btnClass}
+                  onClick={() => !showFeedback && handleAnswer(option)}
+                  disabled={!!selectedOption}
+                >
+                  {option}
+                </button>
+              );
+            })}
           </div>
           {showFeedback && (
             <div className={`feedback${isCorrect ? " correct" : " wrong"}`}>
               {isCorrect ? (
                 <>
-                  <div>إِجَابَةٌ صَحِيحَةٌ! أَحْسَنْتَ!</div>
+                  <div className="correct-ans">إِجَابَةٌ صَحِيحَةٌ! أَحْسَنْتَ!</div>
                   <div className="show-trad">{questions[currentQuestion].trad}</div>
                   {currentQuestion < questions.length - 1 ? (
                     <button className="next-q-btn" onClick={handleNext}>
@@ -1959,18 +1971,87 @@ const startQuiz = (type) => {
       )}
 
       {step === "result" && (
-        <>
-          <div className="result-title">النتيجة النهائية</div>
-          <div className="result-score">
-            حصلت على <span className="right">{score}</span> من <span>{questions.length}</span> إجابات صحيحة!
-          </div>
-        </>
-      )}
+  (() => {
+    const answeredCount = userAnswers.filter(a => a !== undefined).length;
+    return (
+      <>
+        <div className="result-title">النَّتِيجَةُ النِّهَائِيَّةُ</div>
+        <div className="result-score">
+      حَصَلْتَ عَلَى <span className="right">{toIndianNumber(score)}</span> مِنْ <span>{toIndianNumber(answeredCount)}</span> إِجَابَاتٍ صَحِيحَةٍ!
+        </div>
+        <div className="results-list">
+          <h3>مُرَاجَعَةُ الْأَسْئِلَةِ</h3>
+          {questions.map((q, i) => {
+            const userAnswer = userAnswers[i];
+            const isAnswered = userAnswer !== null && userAnswer !== undefined;;
 
-      {/* Home button at the bottom, except on start page */}
-      {step !== "start" && (
-        <div className="home-btns" style={{ marginTop: "auto" }}>
-          <button className="main-btn home" onClick={handleRestart}>الصَّفْحَة الرَّئِيسِيَّة</button>
+        if (!isAnswered) return null;
+
+            const wasCorrect = userAnswer === q.correctAnswer;
+            const questionParts = q.question.split('______');
+
+            return (
+              <div key={i} className="result-question-item">
+                <div>
+                  <span className="question-number">{toIndianNumber(i + 1)}.</span>
+                  {questionParts[0]}
+                  <span className="correct-answer-text">{q.correctAnswer}</span>
+                  {questionParts[1]}
+                  {!wasCorrect && <span className="wrong-answer-text"> ({userAnswer})</span>}
+                </div>
+                <div className="show-trad" dir="ltr">{q.trad}</div>
+              </div>
+            );
+          })}
+        </div>
+      </>
+    );
+  })()
+)}
+
+      {/* Main bottom buttons always at the bottom */}
+      <div
+        className="bottom-btns"
+        style={{
+          marginTop: "auto",
+          display: "flex",
+          flexDirection: "row",
+          gap: "1em",
+          width: "100%",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        {step === "quiz" && (
+          <button
+            className="main-btn home"
+            style={{ background: "#ef4444", flex: 1, maxWidth: 220 }}
+            onClick={() => setShowConfirmExit(true)}
+          >
+            إِيقَافُ الاِمْتِحَان
+          </button>
+        )}
+        <button
+          className="main-btn home"
+          style={{ flex: 1, maxWidth: 220 }}
+          onClick={handleRestart}
+        >
+          الصَّفْحَة الرَّئِيسِيَّة
+        </button>
+      </div>
+
+      {showConfirmExit && (
+        <div className="modal-overlay">
+          <div className="modal-box">
+            <div style={{ marginBottom: "1em" }}>هل تريد فعلاً إيقاف الامتحان وعرض النتيجة؟</div>
+            <div style={{ display: "flex", gap: "1em", justifyContent: "center" }}>
+              <button className="main-btn home" onClick={() => {
+                setShowConfirmExit(false);
+                setStep("result");
+              }}>نعم</button>
+              <button className="main-btn home" style={{ background: "#64748b" }} onClick={() => setShowConfirmExit(false)}>لا</button>
+            </div>
+          </div>
         </div>
       )}
     </div>
