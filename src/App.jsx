@@ -2031,13 +2031,15 @@ const startQuiz = (type) => {
             إِيقَافُ الاِمْتِحَان
           </button>
         )}
-        <button
-          className="main-btn home"
-          style={{ flex: 1, maxWidth: 220 }}
-          onClick={handleRestart}
-        >
-          الصَّفْحَة الرَّئِيسِيَّة
-        </button>
+        {step !== "start" && (
+          <button
+            className="main-btn home"
+            style={{ flex: 1, maxWidth: 220 }}
+            onClick={handleRestart}
+          >
+            الصَّفْحَة الرَّئِيسِيَّة
+          </button>
+        )}
       </div>
 
       {showConfirmExit && (

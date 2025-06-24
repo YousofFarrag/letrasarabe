@@ -25,7 +25,7 @@ body, #root, .main-bg {
   min-width: 0;
   min-height: 90vh;
   max-height: 100vh;
-  margin: 2vh auto;
+  margin: 0 auto 2em; /* Align to top, center horizontally, with bottom margin */
   padding: 1rem 1rem 2.5rem 1rem; /* extra bottom padding for buttons */
   box-sizing: border-box;
   background: rgba(255,255,255,0.95);
@@ -81,9 +81,7 @@ body, #root, .main-bg {
 .main-btn,
 .main-btn.alt,
 .main-btn.home,
-.show-btn,
-.repeat-btn, 
-.show-ans-btn {
+.show-btn{
   background: linear-gradient(90deg, #5b7fff 0%, #8f9fff 100%);
   color: #fff;
   font-size: 1.3em;
@@ -103,44 +101,27 @@ body, #root, .main-bg {
   font-family: 'Cairo', Arial, sans-serif;
 }
 .repeat-btn, 
-.show-ans-btn {
+.show-ans-btn,
+.next-q-btn {
   background: linear-gradient(90deg, #5b7fff 0%, #8f9fff 100%);
   color: #fff;
-  font-size: 16pt;
+  font-size: 15pt;
   font-weight: bold;
   border: none;
-  border-radius: 1.5em;
-  padding: 0.4em 0.5em;
+  border-radius: 1em;
+  padding: 0.3em 0.5em;
   margin: 0;
   cursor: pointer;
   box-shadow: 0 2px 8px 0 rgba(99, 102, 241, 0.08);
   transition: background 0.2s, box-shadow 0.2s;
   width: 200px;
-  max-width: 180px;
+  max-width: 160px;
   align-self: center;
   text-align: center;
   letter-spacing: 0.01em;
   font-family: 'Cairo', Arial, sans-serif;
 }
-.next-q-btn {
-  background: linear-gradient(90deg, #5b7fff 0%, #8f9fff 100%);
-  color: #fff;
-  font-size: 16pt;
-  font-weight: bold;
-  border: none;
-  border-radius: 1.5em;
-  padding: 0.4em .5em;
-  margin: 0;
-  cursor: pointer;
-  box-shadow: 0 2px 8px 0 rgba(99, 102, 241, 0.08);
-  transition: background 0.2s, box-shadow 0.2s;
-  width: 150px;
-  max-width: 180px;
-  align-self: center;
-  text-align: center;
-  letter-spacing: 0.01em;
-  font-family: 'Cairo', Arial, sans-serif;
-}
+
 .next-q:hover,
 .next-q:active,
 .main-btn.alt:hover,
@@ -166,10 +147,10 @@ body, #root, .main-bg {
 .q-counter {
   color: #6366f1;
   font-weight: 700;
-  margin-bottom: 0.7em;
+  margin-bottom: 0.5em;
   font-size: 1.1em;
   text-align: center;
-  margin-bottom: 1.2em;
+  margin-bottom: 0.5em;
   margin-top: 0.5em;
   width: 100%;
   display: block;
@@ -179,12 +160,12 @@ body, #root, .main-bg {
 .q-text {
   background: #e0e7ff;
   border-radius: 1.2em;
-  padding: 0.5em .5em;
-  margin-bottom: 0.7em;
+  padding: 0.3em .5em;
+  margin-bottom: 0em;
   width: 90%;
   box-shadow: 0 2px 8px 0 rgba(99, 102, 241, 0.08);
   color: #3730a3;
-  font-size: 24pt;
+  font-size: 20pt;
   font-weight: bold;
   direction: rtl;
   text-align: center;
@@ -196,7 +177,7 @@ body, #root, .main-bg {
   color: #5a6470;
   font-size: 1.3em;
   margin-bottom: 0.5em;
-  text-align: right;
+  text-align: center;
   direction: rtl;
 }
 
@@ -204,10 +185,10 @@ body, #root, .main-bg {
 .options-2x2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.7em 0.7em;
-  width: 100%;
-  margin-bottom: .5em;
-  margin-top: 0.5em;
+  gap: 0.5em 0.5em;
+  width: 95%;
+  margin-bottom: 0em;
+  margin-top: 0em;
   justify-items: center;
 }
 .options-row {
@@ -223,17 +204,17 @@ body, #root, .main-bg {
   flex: 1 1 0;
   background: #f0f4ff;
   border: 1.5px solid #bfcfff;
-  border-radius: 1em;
-  font-size: 24pt;
+  border-radius: 0.5em;
+  font-size: 20pt;
   color: #3730a3;
-  padding: 0.2em 0;
+  padding: 0.1em 0;
   margin: 0;
   cursor: pointer;
   transition: background 0.2s, border 0.2s, color 0.2s;
   text-align: center;
   outline: none;
-  min-width: 170px;
-  min-height: 2em;
+  min-width: 140px;
+  min-height: 1.5em;
   user-select: none;
 }
 .option-btn.selected {
@@ -257,8 +238,8 @@ body, #root, .main-bg {
   width: 100%;
   border-radius: 1em;
   padding: .2em 0.5em;
-  margin-top: 1.2em;
-  margin-bottom: 1.2em;
+  margin-top: 0em;
+  margin-bottom: 0em;
   font-size: 1.15em;
   text-align: center;
   box-shadow: 0 2px 8px 0 rgba(239, 68, 68, 0.07);
@@ -277,7 +258,7 @@ body, #root, .main-bg {
   color: #991b1b;
   border: 2px solid #ef4444;
   font-size: 1.2em;
-  margin-bottom: 0.3em;
+  margin-bottom: 0em;
   direction: rtl;
 }
 .show-btn {
@@ -303,17 +284,18 @@ body, #root, .main-bg {
   display: block;
   color: #166534;
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: 1.3em;
   margin-bottom: 0.4¡em;
   margin-top: 0.3em;
   direction: rtl;
+  text-align: right;
 }
 .show-trad {
   display: block;
   color: #166534;
   font-size: 1.1em;
   margin-bottom: 0.6em;
-  margin-top: 0.4em;
+  margin-top: 0em;
   direction: ltr;
 }
 .right {
@@ -332,11 +314,11 @@ body, #root, .main-bg {
   margin-top: 0.5em;
 }
 .result-score {
-  font-size: 1.8em; /* Larger score */
+  font-size: 1.3em; /* Larger score */
   text-align: center;
   margin-bottom: 1em;
-  padding: 0.8em 1.5em;
-  background-color: #e2e8f0; /* Light background for score */
+  padding: 0.3em .5em;
+  background-color: #f5f1ff; /* Light background for score */
   border-radius: 8px;
   display: inline-block; /* To make padding effective */
   margin-left: auto;
@@ -367,10 +349,10 @@ body, #root, .main-bg {
 }
 
 .results-list h3 {
-  font-size: 1.6em;
+  font-size: 1.4em;
   color: #2d3748;
   border-bottom: 2px solid #a0aec0; /* Slightly darker border */
-  padding-bottom: 0.4em;
+  padding-bottom: 0.2em;
   margin-bottom: 0.5em;
   margin-top: 0.3em;
   font-weight: bold;
@@ -422,29 +404,8 @@ body, #root, .main-bg {
   font-style: italic;
   margin-top: 0em;
   padding-top: 0em;
-  border-top: 1px dashed #ebf4ff; /* Subtle separator for translation */
+  text-align: left;
 }
-
-
-/* Question card and feedback/answer boxes 
-.question-box,
-.feedback,
-.result-box {
-  background: #f5f7ff;
-  border-radius: 1.2em;
-  padding: 1.2em 0.5em;
-  margin: 1.2em 0;
-  box-shadow: 0 2px 8px 0 rgba(99, 102, 241, 0.08);
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-  font-size: 1.3em;
-  font-family: 'Cairo', Arial, sans-serif;
-  overflow-wrap: break-word;
-  word-break: break-word; 
-  /* Add this to match the answer cards */
-  /*align-self: stretch;*/
 
 
 /* Question card only */
@@ -470,10 +431,10 @@ body, #root, .main-bg {
 .feedback {
   background: #fffbe7;
   border-radius: 1.2em;
-  padding: 1.2em 0.5em;
+  padding: 0.5em 0.5em;
   margin: 1.2em 0;
   box-shadow: 0 2px 8px 0 rgba(255, 193, 7, 0.08);
-  width: 100%;
+  width: 90%;
   max-width: 100%;
   box-sizing: border-box;
   text-align: center;
@@ -506,16 +467,20 @@ body, #root, .main-bg {
 .correct-answer-label,
 .wrong-answer,
 .correct-answer-value {
-  font-size: 1.3em;
+  font-size: 1.2em;
+  font-size: 1.2em;
   font-weight: bold;
   color: #991b1b; /* Dark red for emphasis */
-  margin-bottom: 0.5em;
+  margin-bottom: 0em;
   direction: rtl;
 }
-
+.correct-answer-label,
+.wrong-answer{
+  text-align: right;
+}
 .correct-answer-value {
   font-size: 1.6em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0em;
   color: #217a3a;
 }
 
@@ -547,7 +512,7 @@ body, #root, .main-bg {
     height: 90vh;          /* Ensure it fills vertically */
     padding: 1.2rem 0.3rem;
     border-radius: 1.2rem;
-    margin: 0.5cm auto;
+    margin: 0 auto 2em; /* Align to top, center horizontally, with bottom margin */
     gap: 0.7em;
     box-sizing: border-box;
     display: flex;
@@ -564,14 +529,9 @@ body, #root, .main-bg {
     font-size: 1.1em;
   }
   .q-text {
-    font-size: 24;
+    font-size: 20;
   }
-  /* .option-btn {
-    min-width: 2.2em;
-    min-height: 2em;
-    font-size: 1.1em;
-    padding: 0.2em 0.7em;
-  }*/
+
   .feedback {
     font-size: 1em;
   }
@@ -580,10 +540,10 @@ body, #root, .main-bg {
     font-size: 2em;
   }
   .result-score {
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
   .results-list h3 {
-    font-size: 1.4em;
+    font-size: 1.3em;
   }
   .result-question-item div:first-child {
     font-size: 1.1em;
