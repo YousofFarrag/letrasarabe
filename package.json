@@ -1,9 +1,9 @@
 {
-  "name": "arabepresente2025",
+  "name": "letrasarabe",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-"homepage": "https://yousoffarrag.github.io/arabepresente2025",
+"homepage": "https://yousoffarrag.github.io/letrasarabe",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

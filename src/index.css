@@ -93,7 +93,7 @@ body, #root, .main-bg {
   cursor: pointer;
   box-shadow: 0 2px 8px 0 rgba(99, 102, 241, 0.08);
   transition: background 0.2s, box-shadow 0.2s;
-  width: 200px;
+  width: 250px;
   max-width: 260px;
   align-self: center;
   text-align: center;
@@ -114,8 +114,8 @@ body, #root, .main-bg {
   cursor: pointer;
   box-shadow: 0 2px 8px 0 rgba(99, 102, 241, 0.08);
   transition: background 0.2s, box-shadow 0.2s;
-  width: 200px;
-  max-width: 160px;
+  width: 230px;
+  max-width: 230px;
   align-self: center;
   text-align: center;
   letter-spacing: 0.01em;
@@ -167,7 +167,7 @@ body, #root, .main-bg {
   color: #3730a3;
   font-size: 20pt;
   font-weight: bold;
-  direction: rtl;
+  direction: ltr;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -259,7 +259,7 @@ body, #root, .main-bg {
   border: 2px solid #ef4444;
   font-size: 1.2em;
   margin-bottom: 0em;
-  direction: rtl;
+  direction: ltr
 }
 .show-btn {
   margin-top: 0.7em;
@@ -287,17 +287,10 @@ body, #root, .main-bg {
   font-size: 1.3em;
   margin-bottom: 0.4¡em;
   margin-top: 0.3em;
-  direction: rtl;
-  text-align: right;
-}
-.show-trad {
-  display: block;
-  color: #166534;
-  font-size: 1.1em;
-  margin-bottom: 0.6em;
-  margin-top: 0em;
   direction: ltr;
+  text-align: center;
 }
+
 .right {
   color: #22c55e;
   font-weight: 800;
@@ -325,6 +318,7 @@ body, #root, .main-bg {
   margin-right: auto;
   font-weight: 600;
   color: #2d3748;
+  direction: ltr;
 }
 .result-score .right {
   color: #22c55e; /* Green for correct count */
@@ -367,6 +361,8 @@ body, #root, .main-bg {
   margin-bottom: 0.3em;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  direction: ltr;
+  font-size: small;
 }
 
 .result-question-item:hover {
@@ -391,6 +387,7 @@ body, #root, .main-bg {
 .correct-answer-text {
   color: #22c55e;
   font-weight: bold;
+  font-size: 20pt;
 }
 
 .wrong-answer-text {
@@ -463,6 +460,13 @@ body, #root, .main-bg {
   word-break: break-word;
   /* Add any unique styles for results here */
 }
+.correct-answer-display {
+  margin-top: 0em; /* Ajusta este valor para más o menos distancia */
+  font-weight: bold; /* Opcional: para que la respuesta correcta resalte más */
+  color: #4CAF50; /* Opcional: un color para la respuesta correcta */
+  text-align: center;
+  font-size: 35pt; /* Tamaño de fuente más grande */
+}
 
 .correct-answer-label,
 .wrong-answer,
@@ -472,11 +476,12 @@ body, #root, .main-bg {
   font-weight: bold;
   color: #991b1b; /* Dark red for emphasis */
   margin-bottom: 0em;
-  direction: rtl;
+  direction: ltr;
+  text-align: center;
 }
 .correct-answer-label,
 .wrong-answer{
-  text-align: right;
+  text-align: left;
 }
 .correct-answer-value {
   font-size: 1.6em;
