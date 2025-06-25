@@ -129,7 +129,7 @@ const startQuiz = (type) => {
     <div className="app-frame" dir="ltr" style={{ position: "relative", minHeight: "90vh", display: "flex", flexDirection: "column" }}>
       {step === "start" && (
         <>
-          <div className="main-title">letrasarabe2025</div>
+          <div className="main-title">الحُرُوفُ العَرَبِيَّة</div>
           <div className="desc">Pon a prueba tus conocimientos de las letras árabes</div>
           <div className="start-btns">
             <button className="main-btn" onClick={() => startQuiz("random")}>Examen aleatorio</button>
