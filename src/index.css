@@ -387,12 +387,13 @@ body, #root, .main-bg {
 .correct-answer-text {
   color: #22c55e;
   font-weight: bold;
-  font-size: 20pt;
+  font-size: 28pt;
 }
 
 .wrong-answer-text {
   color: #ef4444;
   font-weight: bold;
+    font-size: 28pt;
 }
 
 .show-trad {
