@@ -84,7 +84,7 @@ body, #root, .main-bg {
 .show-btn{
   background: linear-gradient(90deg, #5b7fff 0%, #8f9fff 100%);
   color: #fff;
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: bold;
   border: none;
   border-radius: 1.5em;
@@ -134,10 +134,10 @@ body, #root, .main-bg {
   color: #fff;
   margin-top: 1em;
   font-size: 1rem;
-  padding: 0.3em 1.2em;
+  padding: 0.3em 0.5em;
   height: 2.3em;
   width: auto;
-  border-radius: 1.2em;
+  border-radius: 0.5em;
 }
 .main-btn:active {
   transform: scale(0.95);
