@@ -207,7 +207,7 @@ const startQuiz = (type) => {
                           onClick={() => setShowCorrect(true)}
                           style={{ width: "220px" }}
                         >
-                          Mostrar respuesta correcta
+                          Respuesta correcta
                         </button>
                       </div>
                     </>
